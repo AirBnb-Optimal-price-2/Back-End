@@ -8,16 +8,6 @@ const listListings = [
     minimum_nights: 2,
     optimal_price: 406,
     users_id: 1
-  },
-  {
-    label: "Hella Cool",
-    accomodates: 6,
-    bedrooms: 3,
-    bathrooms: 2.5,
-    bed_type: "Full size",
-    minimum_nights: 2,
-    optimal_price: 305,
-    users_id: 2
   }
 ];
 
