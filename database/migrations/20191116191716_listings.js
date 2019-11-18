@@ -8,6 +8,7 @@ exports.up = function(knex) {
     tbl.float("bathrooms").notNullable();
     tbl.string("bed_type", 255).notNullable();
     tbl.integer("minimum_nights").notNullable();
+    tbl.integer("optimal_price").notNullable();
     tbl
       .integer("users_id")
       .unsigned()
