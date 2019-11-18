@@ -9,15 +9,10 @@ module.exports = {
   update
 };
 
-function add(listing) {
-  return db("listings")
-    .insert(listing, "id")
-    .then(ids => {
-      const id = ids[0];
-      return db("listings")
-        .where({ id })
-        .first();
-    });
+async function add(listing) {
+  const [id] = await db('listings').insert(listing);
+
+  return findBy(id);
 }
 
 function find() {

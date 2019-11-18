@@ -2,8 +2,9 @@ const router = require("express").Router();
 const Listing = require("../models/listings-model");
 
 // Add listing
-router.post("/listings", (req, res) => {
-  const listing = req.body;
+router.post("/user/:id/listings", (req, res) => {
+  const id = req.params.id;
+  const listing = {...req.body, users_id: id};
   Listing.add(listing)
     .then(listings => res.status(201).json(listings))
     .catch(error => res.status(500).json({ error: "Could not add listing." }));
