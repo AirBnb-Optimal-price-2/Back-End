@@ -1,5 +1,3 @@
-const bcrypt = require("bcryptjs");
-
 const user = [
   {
     username: "admin",
