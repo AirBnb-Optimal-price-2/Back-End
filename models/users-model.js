@@ -7,15 +7,12 @@ module.exports = {
   update
 };
 
-function add(user) {
+async function add(user) {
+  const [id] = await db("users").insert(user, "id");
+  
   return db("users")
-    .insert(user, "id")
-    .then(ids => {
-      const id = ids[0];
-      return db("users")
-        .where({ id })
-        .first();
-    });
+    .where({ id })
+    .first();
 }
 
 function findBy(filter) {
@@ -32,5 +29,5 @@ function update(id, updatedUser) {
   return db("users")
     .where({ id })
     .update(updatedUser)
-    .then(() => findBy({id}));
+    .then(() => findBy({ id }));
 }
