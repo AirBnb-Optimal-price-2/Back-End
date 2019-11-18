@@ -15,7 +15,6 @@ router.post("/register", (req, res) => {
     console.log(user);
     Users.add(user)
       .then(saved => {
-        console.log(saved)
         const token = generateToken(saved);
         res.status(201).json({
           message: "User has been created",
@@ -23,9 +22,9 @@ router.post("/register", (req, res) => {
           token
         });
       })
-      // .catch(error => {
-      //   res.status(500).json(error);
-      // });
+      .catch(error => {
+        res.status(500).json(error);
+      });
   } else {
     res.status(400).json({
       message: "Invalid information about the user, see errors for details",

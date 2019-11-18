@@ -8,18 +8,14 @@ module.exports = {
 };
 
 function add(user) {
-  console.log("inside add function")
-  // const resultReturn = db('users').insert(user, 'id')
-  // console.log(resultReturn)
-  // return resultReturn
   return db("users")
     .insert(user, "id")
-    // .then(ids => {
-    //   const id = ids[0];
-      // return db("users")
-      //   .where({ id })
-      //   .first();
-    //});
+    .then(ids => {
+      const id = ids[0];
+      return db("users")
+        .where({ id })
+        .first();
+    });
 }
 
 function findBy(filter) {
