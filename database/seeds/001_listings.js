@@ -9,7 +9,7 @@ const listListings = [
     users_id: 1
   },
   {
-    label: "Hella Coo",
+    label: "Hella Cool",
     accomodates: 6,
     bedrooms: 3,
     bathrooms: 2.5,
