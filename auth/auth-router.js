@@ -12,7 +12,7 @@ router.post("/register", (req, res) => {
   if (validateResult.isSuccessful === true) {
     const hash = bcrypt.hashSync(user.password, 10);
     user.password = hash;
-     console.log(user)
+    console.log(user);
     Users.add(user)
       .then(saved => {
         const token = generateToken(saved);
@@ -56,17 +56,21 @@ router.post("/login", (req, res) => {
 router.delete("/user/:id", (req, res) => {
   const id = req.params.id;
   Users.remove(id)
-  .then(deleted => res.json({message: "user deleted successfully"}))
-  .catch(err => res.status(500).json({ error: "Failed to delete user." }))
+    .then(deleted => res.json({ message: "user deleted successfully" }))
+    .catch(err => res.status(500).json({ error: "Failed to delete user." }));
 });
 
 //Update user
 router.put("/user/:id", (req, res) => {
-   const id = req.params.id;
-   const updatedUser = req.body;
+  const id = req.params.id;
+  const updatedUser = req.body;
+  const hash = bcrypt.hashSync(updatedUser.password, 10);
+  updatedUser.password = hash;
   Users.update(id, updatedUser)
-  .then(updated => res.status(201).json(updated))
-  .catch(err => res.status(500).json({ error: "Failed to update user." }))
+    .then(updated => {
+      res.status(200).json(updated);
+    })
+    .catch(err => res.status(500).json({ error: "Failed to update user." }));
 });
 
 module.exports = router;

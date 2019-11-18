@@ -32,5 +32,5 @@ function update(id, updatedUser) {
   return db("users")
     .where({ id })
     .update(updatedUser)
-    .then(() => findBy(id));
+    .then(() => findBy({id}));
 }
