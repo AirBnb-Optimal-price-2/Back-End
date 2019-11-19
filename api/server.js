@@ -17,7 +17,7 @@ server.use("/api/auth", authRouter);
 server.use("/api", authenticate, listingsRouter);
 
 server.get("/", (req, res) => {
-  res.status(200).send("Welcome to Airbnb Optimal price");
+  res.status(200).send({message:"Welcome to Airbnb Optimal price"});
 });
 
 module.exports = server;
