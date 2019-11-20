@@ -11,6 +11,7 @@ exports.seed = function(knex) {
           bedrooms: 3,
           bathrooms: 2.5,
           room_type: "Entire home/apt",
+          wifi: "yes",
           minimum_nights: 2,
           "description": "Hella coool",
           optimal_price: 305,
