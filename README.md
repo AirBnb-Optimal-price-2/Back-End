@@ -21,7 +21,7 @@ API Endpoints for "Airbnb Optimal Price 2"
 | bedrooms     | integer          | required                                            |
 | bathrooms    | float            | required                                            |
 | room_type    | string           | required                                            |
-|minimun_nights| integer          | required                                            |
+|minimum_nights| integer          | required                                            |
 |description   | string           | required                                            |
 |optimal_price | integer          | required                                            |
 | users_id     | integer          | foreign key referencing users.id, required          |
