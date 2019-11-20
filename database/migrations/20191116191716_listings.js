@@ -3,11 +3,13 @@ exports.up = function(knex) {
     tbl.increments();
 
     tbl.string("label", 255).notNullable();
+    tbl.string("neighborhood", 255).notNullable();
     tbl.integer("accomodates").notNullable();
     tbl.integer("bedrooms").notNullable();
     tbl.float("bathrooms").notNullable();
-    tbl.string("bed_type", 255).notNullable();
+    tbl.string("room_type", 255).notNullable();
     tbl.integer("minimum_nights").notNullable();
+    tbl.string("description", 255).notNullable();
     tbl.integer("optimal_price").notNullable();
     tbl
       .integer("users_id")
