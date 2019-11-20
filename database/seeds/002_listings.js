@@ -6,11 +6,13 @@ exports.seed = function(knex) {
       return knex("listings").insert([
         {
           label: "It's Lit, Fam!",
+          neighborhood:"Friedrichshain-Kreuzberg",
           accomodates: 5,
           bedrooms: 3,
           bathrooms: 2.5,
-          bed_type: "Queen size",
+          room_type: "Entire home/apt",
           minimum_nights: 2,
+          "description": "Hella coool",
           optimal_price: 305,
           users_id: 1
         }
