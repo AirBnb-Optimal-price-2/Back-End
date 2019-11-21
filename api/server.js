@@ -20,4 +20,8 @@ server.get("/", (req, res) => {
   res.status(200).send({message:"Welcome to Airbnb Optimal price"});
 });
 
+server.post("/login", (req, res) => {
+  res.status(200).send({message:"welcome user"});
+});
+
 module.exports = server;
