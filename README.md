@@ -21,9 +21,14 @@ API Endpoints for "Airbnb Optimal Price 2"
 | bedrooms     | integer          | required                                            |
 | bathrooms    | float            | required                                            |
 | room_type    | string           | required                                            |
-| wife         | boolean          | required                                            |
+| wifi         | boolean          | required                                            |
+| tv           | boolean          | required                                            |
+|Laptop_friendly_workspace| boolean | required                                          |
+|family_kid_friendly | boolean    | required                                            |
+|smoking_allowed | boolean        | required                                            |
 |minimum_nights| integer          | required                                            |
-|description   | string           | required                                            |
+| extra_people | integer          | required                                            |
+| cleaning_fee | integer          | required                                            |
 |optimal_price | integer          | coming from the data science endpoint               |
 | users_id     | integer          | foreign key referencing users.id, required          |
 
