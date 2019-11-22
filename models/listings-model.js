@@ -33,7 +33,7 @@ function findBy(id) {
 function findUserListing(id) {
   return db("listings")
     .join("users", "users.id", "listings.users_id")
-    .where({ users_id: id });
+    .where({ id });
 }
 
 function remove(id) {
