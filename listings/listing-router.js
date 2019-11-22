@@ -4,7 +4,7 @@ const Listing = require("../models/listings-model");
 // Add listing
 router.post("/user/:id/listings", (req, res) => {
   const id = req.params.id;
-  const listing = { ...req.body, users_id: id, optimal_price: 250 };
+  const listing = { ...req.body, users_id: id};
   Listing.add(listing)
     .then(listings => res.status(201).json(listings))
     .catch(error => res.status(500).json({ error: "Could not add listing." }));
